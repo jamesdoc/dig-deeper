@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Auto Download</ion-label>
+      <ion-toggle [(ngModel)]="wantAutoDownload"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>I prefer</ion-label>
+      <ion-select [(ngModel)]="preferType">
+        <ion-select-option value="video">Video</ion-select-option>
+        <ion-select-option value="audio">Audio</ion-select-option>
+        <ion-select-option value="transcript">Transcript only</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Reminder</ion-label>
+      <ion-toggle [(ngModel)]="wantReminder"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime placeholder="Select the time" display-format="HH:mm" [(ngModel)]="AutoReminderTime" [disabled]="!wantReminder"></ion-datetime>
+    </ion-item>
+
+  </ion-list>
+  <ion-button (click) ="save()">Save</ion-button>
+</ion-content>
