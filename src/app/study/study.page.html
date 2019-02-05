@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Study</ion-title>
@@ -6,9 +7,11 @@
 
 <ion-content padding>
 
-  <div class="video">
-    video here
-  </div>
+  <vg-player>
+    <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+      <source src="https://r4---sn-5hne6nlk.c.drive.google.com/videoplayback?expire=1549412013&ei=be5ZXILsPMHwqQXbnbLIDg&ip=185.159.125.162&cp=QVNJQUVfUVBPRFhOOnBwSm03QzN1Y3lJZnNKYXQ1dEpKX0dUU3gxakxwQjYzWmZqUUo1QmZfMnA&id=bfd50934d1702b7a&itag=22&source=webdrive&requiressl=yes&mm=30&mn=sn-5hne6nlk&ms=nxu&mv=u&pl=24&ttl=transient&susc=dr&driveid=1zSODUrXL_d5vfebjkzLrFEVYHfbLOacB&app=explorer&mime=video/mp4&dur=643.006&lmt=1548168242075131&mt=1549397092&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,dur,lmt&sig=AOvmAUowRQIgArG3mGongUJ02zDQR13SjcIFyonxPXS-KPznnj8zjpYCIQCmCtPKfF2lxwRXBcs-efWHV8NIiCIOCVwsWe7dLt4EQA==&lsparams=mm,mn,ms,mv,pl&lsig=ALy0alEwRgIhAJpgaPvxBRmeHmIZdyJCY03VlJXNWJ5pJdzaGOqY-hOIAiEA6QIE_cxAQ0itDMprmq0e3jdTX3BQUxRY_KPglb3vu54=&cpn=LZZkixgXucDcbOGt&c=WEB_EMBEDDED_PLAYER&cver=20190202" type="video/mp4">
+    </video>
+  </vg-player>
 
   <div class="breadcrumb">
     <ion-chip color="medium">
