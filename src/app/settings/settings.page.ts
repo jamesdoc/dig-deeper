@@ -12,30 +12,32 @@ export class SettingsPage implements OnInit {
   public wantReminder: boolean = false;
   public AutoReminderTime: string = "08:15";
   public preferType: string = "video";
+  private myStorage: Storage;
 
-  constructor() { }
+  constructor(private storage: Storage) {
+    this.myStorage = storage;
+  }
 
   ngOnInit() {
-    storage.get('wantAutoDownload').then((val) => {
+    this.myStorage.get('wantAutoDownload').then((val) => {
       this.wantAutoDownload = val;
     });
-    storage.get('wantReminder').then((val) => {
+    this.myStorage.get('wantReminder').then((val) => {
       this.wantReminder = val;
     });
-    storage.get('AutoReminderTime').then((val) => {
+    this.myStorage.get('AutoReminderTime').then((val) => {
       this.AutoReminderTime = val;
     });
-    storage.get('preferType').then((val) => {
+    this.myStorage.get('preferType').then((val) => {
       this.preferType = val;
     });
   }
 
   save() {
-    storage.set('wantAutoDownload', this.wantAutoDownload);
-    storage.set('wantReminder', this.wantReminder);
-    storage.set('AutoReminderTime', this.AutoReminderTime);
-    storage.set('preferType', this.preferType);
-    alert('test');
+    this.myStorage.set('wantAutoDownload', this.wantAutoDownload);
+    this.myStorage.set('wantReminder', this.wantReminder);
+    this.myStorage.set('AutoReminderTime', this.AutoReminderTime);
+    this.myStorage.set('preferType', this.preferType);
   }
 
   toggleReminder() {
