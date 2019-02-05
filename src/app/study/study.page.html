@@ -1,7 +1,22 @@
 
 <ion-header>
   <vg-player>
-    <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+      <vg-overlay-play></vg-overlay-play>
+      <vg-buffering></vg-buffering>
+  
+      <vg-scrub-bar>
+          <vg-scrub-bar-current-time ></vg-scrub-bar-current-time>
+          <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+      </vg-scrub-bar>
+  
+      <vg-controls [vgAutohide]="true" [vgAutohideTime]="3">
+          <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+  
+          <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+  
+          <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+      </vg-controls>
+    <video [vgMedia]="media" #media id="singleVideo" preload="auto">
       <source src="http://127.0.0.1:8080/2%20Timothy%201%20(Week%201%2C%20Day%201).mp4" type="video/mp4">
     </video>
   </vg-player>
