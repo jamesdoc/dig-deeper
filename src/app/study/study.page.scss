@@ -5,3 +5,11 @@ vg-controls {
     background: none;
     bottom:5px;
 }
+
+vg-overlay-play ::ng-deep {
+    .vg-icon-play_arrow:before {
+        border-radius: 50px;
+        background: rgba(0,0,0,0.2);
+    }
+
+} 
