@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -9,13 +10,14 @@ import { Storage } from '@ionic/storage';
 
 export class HomePage implements OnInit {
   private studies;
+  private isShowSubMenu;
   
   constructor(
-    public storage: Storage
+    public storage: Storage,
+    public navCtrl: NavController,
   ) {
     storage.ready().then(() => {
       this.storage.get('studies').then((s) => {
-        console.log(s);
         this.studies = s;
       });
     });
@@ -24,8 +26,13 @@ export class HomePage implements OnInit {
   ngOnInit() { }
 
   weekClick(item) {
-    console.log('click!');
-    console.log(arguments);
+    // Ugly hack for now will show/hide all submenus
+    this.isShowSubMenu = !this.isShowSubMenu;
+  }
+
+  studyClick(item) {
+    this.storage.set('currentStudy', item);
+    this.navCtrl.navigateForward('study');
   }
 
   weekIcon(study) {

@@ -40,6 +40,7 @@ export class AppComponent {
       .then(function(ddJson) {
         const sortedStudies = sortBy(ddJson.data, 'week');
         that.storage.set('studies', sortedStudies);
+        that.storage.set('currentStudy', sortedStudies[0].studies[0]);
       });
   }
 }

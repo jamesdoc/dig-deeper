@@ -1,4 +1,4 @@
-<ion-header *ngIf="mediaType != 'transcript'">
+<ion-header *ngIf="mediaType != 'transcript' && data!==null">
   <vg-player>
     <vg-overlay-play></vg-overlay-play>
     <vg-buffering></vg-buffering>
@@ -17,13 +17,13 @@
     </vg-controls>
 
     <video [vgMedia]="media" #media id="singleVideo" preload="auto" poster="../../assets/poster.png">
-      <source src="{{data.video_url}}" type="video/mp4" *ngIf="mediaType == 'video'">
-      <source src="{{data.audio_url}}" type="audio/mp3" *ngIf="mediaType == 'audio'">
+      <source src="{{ data.video_url }}" type="video/mp4" *ngIf="mediaType == 'video'">
+      <source src="{{ data.audio_url }}" type="audio/mp3" *ngIf="mediaType == 'audio'">
     </video>
   </vg-player>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding *ngIf="data!==null">
   <div class="breadcrumb">
     <ion-select placeholder="Week 1" interface="popover">
       <ion-select-option value="week01">Week 1</ion-select-option>
@@ -50,7 +50,7 @@
 
   <ion-text>
     <h2>Introduction</h2>
-    <p>{{data.text_content.prayer_intro}}</p>
+    <p>{{ data.text_content.prayer_intro }}</p>
   </ion-text>
 
   <ion-text>
