@@ -1,7 +1,5 @@
 {
   "name": "digDeeper",
-  "integrations": {
-    "cordova": {}
-  },
+  "integrations": {},
   "type": "angular"
 }

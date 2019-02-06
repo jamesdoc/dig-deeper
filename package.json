@@ -60,10 +60,5 @@
     "install": "^0.12.2",
     "npm": "^6.7.0"
   },
-  "description": "An Ionic project for daily Biblical devotations",
-  "cordova": {
-    "plugins": {
-      "cordova-sqlite-storage": {}
-    }
-  }
+  "description": "An Ionic project for daily Biblical devotations"
 }
