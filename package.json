@@ -55,7 +55,10 @@
     "protractor": "~5.4.0",
     "ts-node": "~8.0.0",
     "tslint": "~5.12.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "http-server": "^0.11.1",
+    "install": "^0.12.2",
+    "npm": "^6.7.0"
   },
   "description": "An Ionic project for daily Biblical devotations",
   "cordova": {

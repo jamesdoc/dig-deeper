@@ -28,6 +28,8 @@ plugins/
 plugins/android.json
 plugins/ios.json
 $RECYCLE.BIN/
+src/assets/video/*
+src/assets/audio/*
 
 .DS_Store
 Thumbs.db
