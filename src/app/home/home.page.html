@@ -11,6 +11,25 @@
   The world is your oyster.
   <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
 
-  <ion-button [routerLink]="['/study']">Go to study</ion-button>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-label>Home</ion-label>
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="study" [routerLink]="['/study']">
+        <ion-label>Study</ion-label>
+        <ion-icon name="paper"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="settings" [routerLink]="['/settings']">
+        <ion-label>Settings</ion-label>
+        <ion-icon name="settings"></ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
 
 </ion-content>
