@@ -13,7 +13,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>I prefer</ion-label>
+      <ion-label>Download Preference</ion-label>
       <ion-select [(ngModel)]="preferType">
         <ion-select-option value="video">Video</ion-select-option>
         <ion-select-option value="audio">Audio</ion-select-option>
@@ -32,4 +32,25 @@
 
   </ion-list>
   <ion-button (click) ="save()">Save</ion-button>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-label>Home</ion-label>
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="study" [routerLink]="['/study']">
+        <ion-label>Study</ion-label>
+        <ion-icon name="paper"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="settings" [routerLink]="['/settings']">
+        <ion-label>Settings</ion-label>
+        <ion-icon name="settings"></ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
