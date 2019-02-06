@@ -1,15 +1,28 @@
+
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Study</ion-title>
-  </ion-toolbar>
+  <vg-player>
+      <vg-overlay-play></vg-overlay-play>
+      <vg-buffering></vg-buffering>
+  
+      <vg-scrub-bar>
+          <vg-scrub-bar-current-time ></vg-scrub-bar-current-time>
+          <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+      </vg-scrub-bar>
+  
+      <vg-controls [vgAutohide]="true" [vgAutohideTime]="3">
+          <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+  
+          <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+  
+          <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+      </vg-controls>
+    <video [vgMedia]="media" #media id="singleVideo" preload="auto" poster="../../assets/poster.png">
+      <source src="http://127.0.0.1:8080/2%20Timothy%201%20(Week%201%2C%20Day%201).mp4" type="video/mp4">
+    </video>
+  </vg-player>
 </ion-header>
 
 <ion-content padding>
-
-  <div class="video">
-    video here
-  </div>
-
   <div class="breadcrumb">
     <ion-chip color="medium">
       <ion-icon name="arrow-dropright"></ion-icon>
@@ -21,7 +34,6 @@
       <ion-label>Day 1</ion-label>
     </ion-chip>
   </div>
-
   <ion-text>
     <h1>Two Gospels</h1>
   </ion-text>
@@ -63,4 +75,7 @@
     <h2>Closing Prayer</h2>
     <p>Our Father God we thank you so much for the promise of life that is in the Gospel of the Lord Jesus Christ. Please help us today to hold firm to that true gospel. We ask it in Jesus name, amen.</p>
   </ion-text>
+
+    <ion-button [routerLink]="['/home']">Back to all</ion-button>
+
 </ion-content>
