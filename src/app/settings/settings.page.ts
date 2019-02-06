@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicStorageModule } from '@ionic/storage';
 import { Storage } from '@ionic/storage';
 
 @Component({
