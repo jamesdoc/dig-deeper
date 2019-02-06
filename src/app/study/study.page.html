@@ -1,26 +1,23 @@
 <ion-header *ngIf="mediaType != 'transcript' && data!==null">
-  <vg-player>
-    <vg-overlay-play></vg-overlay-play>
-    <vg-buffering></vg-buffering>
-
-    <vg-scrub-bar>
-      <vg-scrub-bar-current-time ></vg-scrub-bar-current-time>
-      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-    </vg-scrub-bar>
-
-    <vg-controls [vgAutohide]="true" [vgAutohideTime]="3">
-      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
-
-      <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
-
-      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-    </vg-controls>
-
+  <vg-player (onPlayerReady)="onPlayerReady($event)"  (click)="onClick()">
+      <vg-buffering></vg-buffering>
+      <div class="vg-custom-overlay">
+          <div class="overlay-play-container vg-icon-play_arrow"></div>
+      </div>
+      <vg-controls>
+          <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+          <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+      </vg-controls>
+      <vg-scrub-bar>
+          <vg-scrub-bar-current-time ></vg-scrub-bar-current-time>
+          <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+      </vg-scrub-bar>
     <video [vgMedia]="media" #media id="singleVideo" preload="auto" poster="../../assets/poster.png">
       <source src="{{ data.video_url }}" type="video/mp4" *ngIf="mediaType == 'video'">
       <source src="{{ data.audio_url }}" type="audio/mp3" *ngIf="mediaType == 'audio'">
     </video>
   </vg-player>
+  <ion-button ngClass="read" (click)="readTranscript()" expand="block">Read</ion-button>
 </ion-header>
 
 <ion-content padding *ngIf="data!==null">
