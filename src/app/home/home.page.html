@@ -8,8 +8,16 @@
 
 <ion-content padding>
 
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+ 
+  <div *ngFor="let week of studies">
+    <h2>{{ week.week }}</h2>
+    
+    <ion-list>
+      <ion-item *ngFor="let s of week.studies">
+        <ion-label>{{ s.title }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">
