@@ -9,12 +9,12 @@
   <ion-list>
     <ion-item>
       <ion-label>Auto Download</ion-label>
-      <ion-toggle [(ngModel)]="wantAutoDownload"></ion-toggle>
+      <ion-toggle [(ngModel)]="wantAutoDownload" (ionChange)=save()></ion-toggle>
     </ion-item>
 
     <ion-item>
       <ion-label>Download Preference</ion-label>
-      <ion-select [(ngModel)]="preferType">
+      <ion-select [(ngModel)]="preferType" (ionChange)=save()>
         <ion-select-option value="video">Video</ion-select-option>
         <ion-select-option value="audio">Audio</ion-select-option>
         <ion-select-option value="transcript">Transcript only</ion-select-option>
@@ -23,15 +23,14 @@
 
     <ion-item>
       <ion-label>Reminder</ion-label>
-      <ion-toggle [(ngModel)]="wantReminder"></ion-toggle>
+      <ion-toggle [(ngModel)]="wantReminder" (ionChange)=save()></ion-toggle>
     </ion-item>
     <ion-item>
       <ion-label>Time</ion-label>
-      <ion-datetime placeholder="Select the time" display-format="HH:mm" [(ngModel)]="AutoReminderTime" [disabled]="!wantReminder"></ion-datetime>
+      <ion-datetime placeholder="Select the time" display-format="HH:mm" [(ngModel)]="AutoReminderTime" [disabled]="!wantReminder" (ionChange)=save()></ion-datetime>
     </ion-item>
 
   </ion-list>
-  <ion-button (click) ="save()">Save</ion-button>
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">

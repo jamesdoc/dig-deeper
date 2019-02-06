@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IonicStorageModule } from '@ionic/storage';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -20,32 +21,32 @@ export class SettingsPage implements OnInit {
 
   ngOnInit() {
     this.myStorage.get('wantAutoDownload').then((val) => {
-      this.wantAutoDownload = val;
+      if (val != null) {
+        this.wantAutoDownload = val;
+      }
     });
     this.myStorage.get('wantReminder').then((val) => {
-      this.wantReminder = val;
+      if (val != null) {
+        this.wantReminder = val;
+      }
     });
     this.myStorage.get('AutoReminderTime').then((val) => {
-      this.AutoReminderTime = val;
+      if (val != null) {
+        this.AutoReminderTime = val;
+      }
     });
     this.myStorage.get('preferType').then((val) => {
-      this.preferType = val;
+      if (val != null) {
+        this.preferType = val;
+      }
     });
   }
 
-  save() {
+  public save() {
     this.myStorage.set('wantAutoDownload', this.wantAutoDownload);
     this.myStorage.set('wantReminder', this.wantReminder);
     this.myStorage.set('AutoReminderTime', this.AutoReminderTime);
     this.myStorage.set('preferType', this.preferType);
-  }
-
-  toggleReminder() {
-    this.wantReminder = !this.wantReminder;
-  }
-
-  toggleAutoDownload() {
-    this.wantAutoDownload = !this.wantAutoDownload;
   }
 
 }
