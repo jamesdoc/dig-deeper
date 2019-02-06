@@ -8,9 +8,9 @@
 
 <!-- Study List -->
 <ion-list inset="false" lines="full">
-  <div *ngFor="let week of studies">
+  <div *ngFor="let week of studies; let idx = index">
 
-    <ion-item (click)="weekClick(week)">
+    <ion-item (click)="weekClick(week, idx)">
       <ion-icon name="{{weekIcon(week)}}" size="large" slot="start"></ion-icon>
       <ion-label text-wrap>
         <ion-text>
@@ -27,7 +27,7 @@
       <ion-icon *ngIf="!isDownloaded(week)" name="cloud-download" color="medium" size="small" slot="end"></ion-icon>
     </ion-item>
 
-    <div *ngIf="isShowSubMenu">
+    <div class="study-list {{studyListClass(idx)}}">
       <ion-item *ngFor="let s of week.studies"  (click)="studyClick(s)">
         <ion-label text-wrap>
           {{ s.title }}

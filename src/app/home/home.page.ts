@@ -10,7 +10,6 @@ import { Storage } from '@ionic/storage';
 
 export class HomePage implements OnInit {
   private studies;
-  private isShowSubMenu;
   
   constructor(
     public storage: Storage,
@@ -25,14 +24,22 @@ export class HomePage implements OnInit {
 
   ngOnInit() { }
 
-  weekClick(item) {
-    // Ugly hack for now will show/hide all submenus
-    this.isShowSubMenu = !this.isShowSubMenu;
+  weekClick(item, index) {
+      // Close all open weeks/studies
+      this.studies.forEach((study) => {
+        study.isOpen = false;
+      });
+      // Set this week/study as open
+      this.studies[index].isOpen = true;
   }
 
   studyClick(item) {
     this.storage.set('currentStudy', item);
     this.navCtrl.navigateForward('study');
+  }
+
+  studyListClass(index) {
+    return this.studies[index].isOpen ? 'active' : '';
   }
 
   weekIcon(study) {

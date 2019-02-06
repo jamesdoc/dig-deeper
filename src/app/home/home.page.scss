@@ -10,3 +10,13 @@ ion-item {
     font-style: italic;
   }
 }
+
+.study-list {
+  max-height: 0;
+  transition: max-height 0.4s ease-out;
+
+  &.active {
+    max-height: 300px;
+    transition: max-height 0.75s ease-in;
+  }
+}
