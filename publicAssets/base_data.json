@@ -9,6 +9,7 @@
       "passage": "1 Timothy 2",
       "studies": [
         {
+          "id": "23456",
           "publish_date": "2019-01-14",
           "title": "Two Gospels",
           "passage_ref": "2 Timothy 1:1-11",
@@ -49,6 +50,7 @@
           }
         },
         {
+          "id": "74245",
           "publish_date": "2019-01-15",
           "title": "Sticking to the task",
           "passage_ref": "2 Timothy 1:1-8",
@@ -80,6 +82,7 @@
           }
         },
         {
+          "id": "27438",
           "publish_date": "2019-01-16",
           "title": "Sharing in the sufferings",
           "passage_ref": "2 Timothy 1:1-8",
@@ -113,6 +116,7 @@
           }
         },
         {
+          "id": "82545",
           "publish_date": "2019-01-17",
           "title": "By the Power of God",
           "passage_ref": "2 Timothy 1:1-12",
@@ -145,6 +149,7 @@
           }
         },
         {
+          "id": "18424",
           "publish_date": "2019-01-18",
           "title": "Saved to Resurrection",
           "passage_ref": "2 Timothy 1:8-12",
@@ -183,6 +188,7 @@
       "passage": "1 Timothy 1",
       "studies": [
         {
+          "id": "91535",
           "status": "published",
           "publish_date": "2019-01-07",
           "title": "Two Gospels",
@@ -225,6 +231,7 @@
       "passage": "1 Timothy 3",
       "studies": [
         {
+          "id": "72743",
           "status": "published",
           "publish_date": "2019-01-07",
           "title": "Two Gospels",
