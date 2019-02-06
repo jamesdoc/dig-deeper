@@ -1,3 +1,24 @@
+.breadcrumb {
+  display: flex;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+p {
+  margin-left: 1rem;
+
+  &.scripture-reference {
+    font-style: italic;
+    font-size: 1.4rem;
+  }
+
+  &.scripture {
+    font-style: italic;
+  }
+}
+
 vg-scrub-bar {
     bottom: 0px;
 }
