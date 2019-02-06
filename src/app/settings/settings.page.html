@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Auto Download</ion-label>
+      <ion-toggle [(ngModel)]="wantAutoDownload" (ionChange)=save()></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Download Preference</ion-label>
+      <ion-select [(ngModel)]="preferType" (ionChange)=save()>
+        <ion-select-option value="video">Video</ion-select-option>
+        <ion-select-option value="audio">Audio</ion-select-option>
+        <ion-select-option value="transcript">Transcript only</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Reminder</ion-label>
+      <ion-toggle [(ngModel)]="wantReminder" (ionChange)=save()></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime placeholder="Select the time" display-format="HH:mm" [(ngModel)]="AutoReminderTime" [disabled]="!wantReminder" (ionChange)=save()></ion-datetime>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button tab="home" [routerLink]="['/home']">
+        <ion-label>Home</ion-label>
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="study" [routerLink]="['/study']">
+        <ion-label>Study</ion-label>
+        <ion-icon name="paper"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="settings" [routerLink]="['/settings']">
+        <ion-label>Settings</ion-label>
+        <ion-icon name="settings"></ion-icon>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
