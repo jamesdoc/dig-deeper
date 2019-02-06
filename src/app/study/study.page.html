@@ -17,7 +17,7 @@
       <source src="{{ data.audio_url }}" type="audio/mp3" *ngIf="mediaType == 'audio'">
     </video>
   </vg-player>
-  <ion-button ngClass="read" (click)="readTranscript()" expand="block">Read</ion-button>
+  <ion-button ngClass="read" (click)="toggleVideo()" expand="block">Read</ion-button>
 </ion-header>
 
 <ion-content padding *ngIf="data!==null">
@@ -36,6 +36,7 @@
       <ion-select-option value="day05">Day 5</ion-select-option>
     </ion-select>
   </div>
+  <ion-button ngClass="watch hide" (click)="toggleVideo()" expand="block">Watch</ion-button>
   <ion-text>
 
     <h1>{{data.title}}</h1>

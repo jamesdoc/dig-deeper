@@ -20,8 +20,9 @@ export class StudyPage implements OnInit {
   @Input() vgFor: string;
   private api: VgAPI;
   private target: any;
-  private showOverlay: boolean;
-  private timer: NodeJS.Timeout;
+  private overlayVisble: boolean;
+  private timerOverlay: NodeJS.Timeout;
+  private timerReadButton: NodeJS.Timeout;
 
   constructor(
     private route: ActivatedRoute,
@@ -50,7 +51,7 @@ export class StudyPage implements OnInit {
   }
 
   ngOnInit() {
-    this.showOverlay = true;
+    this.overlayVisble = true;
     this.id = this.route.snapshot.paramMap.get('day');
     if (this.id) {
         // console.log(this.id);
@@ -83,37 +84,60 @@ export class StudyPage implements OnInit {
     const state = this.getState();
     switch (state) {
         case VgStates.VG_PLAYING:
-            if (this.showOverlay) {
-              clearTimeout(this.timer);
+            clearTimeout(this.timerOverlay);
+            clearTimeout(this.timerReadButton);
+            if (this.overlayVisble) {
               this.target.pause();
+              document.querySelector('.vg-custom-overlay .overlay-play-container').classList.replace('vg-icon-pause', 'vg-icon-play_arrow');
             } else {
-              this.toggleOverlay();
-              this.showOverlay = true;
-              this.timer = setTimeout(() => {
-                this.toggleOverlay();
-                this.showOverlay = false;
+              this.showOverlay();
+              this.showReadButton();
+              this.overlayVisble = true;
+              this.timerOverlay = setTimeout(() => {
+                this.hideOverlay();
               }, 5000);
+              this.timerReadButton = setTimeout(() => {
+                this.hideReadButton();
+              }, 8000);
             }
             break;
 
         case VgStates.VG_PAUSED:
         case VgStates.VG_ENDED:
             this.target.play();
-            if (this.showOverlay) {
-              this.showOverlay = false;
-              this.timer = setTimeout(() => this.toggleOverlay(), 3000);
+            document.querySelector('.vg-custom-overlay .overlay-play-container').classList.replace('vg-icon-play_arrow', 'vg-icon-pause');
+            if (this.overlayVisble) {
+              this.timerOverlay = setTimeout(() => this.hideOverlay(), 3000);
+              this.timerOverlay = setTimeout(() => this.hideReadButton(), 6000);
             }
             break;
     }
 }
 
-toggleOverlay() {
-  document.querySelector('vg-controls').classList.toggle('hide');
-  document.querySelector('.vg-icon-play_arrow').classList.toggle('hide');
+hideOverlay() {
+  document.querySelector('vg-controls').classList.add('hide');
+  document.querySelector('.vg-custom-overlay .overlay-play-container').classList.add('hide');
+  this.overlayVisble = false;
 }
 
-readTranscript() {
+showOverlay() {
+  document.querySelector('vg-controls').classList.remove('hide');
+  document.querySelector('.vg-custom-overlay .overlay-play-container').classList.remove('hide');
+  this.overlayVisble = true;
+}
+
+showReadButton() {
+  document.querySelector('ion-button.read').classList.remove('hide');
+  this.readButtonVisible = false;
+}
+hideReadButton() {
+  document.querySelector('ion-button.read').classList.add('hide');
+  this.readButtonVisible = true;
+}
+
+toggleVideo() {
   document.querySelector('vg-player').classList.toggle('hide');
+  document.querySelector('ion-button.watch').classList.toggle('hide');
 }
 
 

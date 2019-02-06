@@ -25,6 +25,26 @@ ion-button.read {
     position: absolute;
     right: 30px;
     z-index: 400;
+    @media (orientation: portrait) {
+        display:none;
+      }
+    &.hide {
+        display:none;
+    }
+}
+
+ion-button.watch {
+    width: 100px;
+    top: 30px;
+    position: absolute;
+    right: 30px;
+    z-index: 400;
+    @media (orientation: portrait) {
+        display:none;
+      }
+    &.hide {
+        display:none;
+    }
 }
 
 vg-player {
@@ -39,9 +59,12 @@ vg-scrub-bar {
 vg-controls {
     background: none;
     bottom:5px;
-
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0.3s, opacity 0.3s ease-in;
     &.hide {
-        display:none;
+        visibility: hidden;
+        opacity: 0;
     }
 }
 
@@ -58,22 +81,31 @@ vg-controls {
     filter: alpha(opacity=60);
     opacity: 0.6;
 
-    .vg-icon-play_arrow:before {
+    .vg-icon-play_arrow:before,
+    .vg-icon-pause:before {
         border-radius: 50px;
         background: rgba(0,0,0,0.2);
     }
 
-    .overlay-play-container.vg-icon-play_arrow {
-        pointer-events: none;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 80px;
-        &.hide {
-            display:none;
+
+    .overlay-play-container {
+        &.vg-icon-play_arrow,
+        &.vg-icon-pause {
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0.3s, opacity 0.3s ease-in;
+            &.hide {
+                visibility: hidden;
+                opacity: 0;
+            }
         }
     }
 
