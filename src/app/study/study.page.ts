@@ -58,8 +58,8 @@ export class StudyPage implements OnInit {
             ],
             "prayer_outro": "Our Father God we thank you so much for the promise of life that is in the Gospel of the Lord Jesus Christ. Please help us today to hold firm to that true gospel. We ask it in Jesus name, amen."
         },
-        "video_url": "…",
-        "audio_url": "…",
+        "video_url": "http://localhost:8080/video/w1d1.mp4",
+        "audio_url": "http://localhost:8080/audio/w1d1.mp3",
         "author": {
             "first_name": "Nigel",
             "last_name": "Styles",

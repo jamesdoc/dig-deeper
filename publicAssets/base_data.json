@@ -17,7 +17,7 @@
             "To Timothy, my beloved child:",
             "Grace, mercy, and peace from God the Father and Christ Jesus our Lord.",
             "I thank God whom I serve, as did my ancestors, with a clear conscience, as I remember you constantly in my prayers night and day. As I remember your tears, I long to see you, that I may be filled with joy. I am reminded of your sincere faith, a faith that dwelt first in your grandmother Lois and your mother Eunice and now, I am sure, dwells in you as well. For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands, for God gave us a spirit not of fear but of power and love and self-control.",
-            "Therefore do not be ashamed of the testimony about our Lord, nor of me his prisoner, but share in suffering for the gospel by the power of God, who saved us and called us to a holy calling, not because of our works but because of his own purpose and grace, which he gave us in Christ Jesus before the ages began, and which now has been manifested through the appearing of our Savior Christ Jesus, who abolished death and brought life and immortality to light through the gospel, for which I was appointed a preacher and apostle and teacher,",
+            "Therefore do not be ashamed of the testimony about our Lord, nor of me his prisoner, but share in suffering for the gospel by the power of God, who saved us and called us to a holy calling, not because of our works but because of his own purpose and grace, which he gave us in Christ Jesus before the ages began, and which now has been manifested through the appearing of our Savior Christ Jesus, who abolished death and brought life and immortality to light through the gospel, for which I was appointed a preacher and apostle and teacher,"
           ],
           "text_content": {
             "prayer_intro": "Thank you Heavenly Father that you are the speaking God. Thank you that what you have breathed out will equip us to live as your servants today. So please teach us, rebuke us, correct us, and train us in righteousness for Jesus’ sake, Amen.",
@@ -39,8 +39,8 @@
             ],
             "prayer_outro": "Our Father God we thank you so much for the promise of life that is in the Gospel of the Lord Jesus Christ. Please help us today to hold firm to that true gospel. We ask it in Jesus name, amen."
           },
-          "video_url": "http://127.0.0.1:8080/src/assets/video/2%20Timothy%201%20(Week%201%2C%20Day%201).mp4",
-          "audio_url": "http://127.0.0.1:8080/src/assets/audio/2%20Timothy%201%20(Week%201%2C%20Day%201).mp3",
+          "video_url": "http://localhost:8080/video/w1d1.mp4",
+          "audio_url": "http://localhost:8080/audio/w1d1.mp3",
           "author": {
             "first_name": "Nigel",
             "last_name": "Styles",
@@ -70,8 +70,8 @@
             ],
             "prayer_outro": "Father God thank You that you give your Holy Spirit to every Christian. Thank you for that gift. Thank you for the gift of faith. Please help us not to be afraid if we are opposed for being a Christian. Please help us to stick at the task that you give to us, to run the race to the very end. Help us today to live like that, persevering, continuing as your servant, in Jesus name we pray, Amen. "
           },
-          "video_url": "http://127.0.0.1:8080/src/assets/video/2%20Timothy%201%20(Week%201%2C%20Day%202).mp4",
-          "audio_url": "http://127.0.0.1:8080/src/assets/audio/2%20Timothy%201%20(Week%201%2C%20Day%202).mp3",
+          "video_url": "http://localhost:8080/video/w1d2.mp4",
+          "audio_url": "http://localhost:8080/audio/w1d2.mp3",
           "author": {
             "first_name": "Nigel",
             "last_name": "Styles",
@@ -103,8 +103,8 @@
             ],
             "prayer_outro": "Father God we thank you for this example of Onesiphorus. Somone was not ashamed of the gospel, or of Paul, or of Paul’s chains. We pray that you would help us to share in suffering for that gospel, as we rejoice in all that the Gospel brings to us. Please may we be willing to take the hard knocks, the opposition, the suffering that comes with it. Help us today to do that, to be willing to not be ashamed of that gospel, but to stand for the Lord Jesus. We ask it in his name. Amen."
           },
-          "video_url": "http://127.0.0.1:8080/src/assets/video/2%20Timothy%201%20(Week%201%2C%20Day%203).mp4",
-          "audio_url": "http://127.0.0.1:8080/src/assets/audio/2%20Timothy%201%20(Week%201%2C%20Day%203).mp3",
+          "video_url": "http://localhost:8080/video/w1d3.mp4",
+          "audio_url": "http://localhost:8080/audio/w1d3.mp3",
           "author": {
             "first_name": "Nigel",
             "last_name": "Styles",
@@ -135,8 +135,8 @@
             ],
             "prayer_outro": "Our Father God we thank you that you equip us by your Holy Spirit the spirit of power. You strengthen us by the grace that is in Christ Jesus. And you do that so that we can share in the suffering that comes alongside living as a Christian and being engaged in Christian ministry. Please would you help us today to share in suffering for the gospel by your power, please strengthen us and equip us to live for you today. In Jesus name, Amen."
           },
-          "video_url": "http://127.0.0.1:8080/src/assets/audio/2%20Timothy%201%20(Week%201%2C%20Day%204).mp3",
-          "audio_url": "http://127.0.0.1:8080/src/assets/audio/2%20Timothy%201%20(Week%201%2C%20Day%204).mp3",
+          "video_url": "http://localhost:8080/video/w1d4.mp4",
+          "audio_url": "http://localhost:8080/audio/w1d4.mp3",
           "author": {
             "first_name": "Nigel",
             "last_name": "Styles",
@@ -166,8 +166,8 @@
             ],
             "prayer_outro": "Father God we thank you for your gospel you that you save us to resurrection, life death abolished, life in immortality brought to light. Thank you for that promise of life. And thank you that you call us to a holy calling that cross shaped ministry of the Lord Jesus, of Paul, of Timothy. Of living a life, a godly life, that entails persecution. Please help us today to walk that walk to follow that calling that you've given to us, with our eyes firmly set on the hope of life that you offer to us. In Jesus name we pray. Amen."
           },
-          "video_url": "http://127.0.0.1:8080/src/assets/video/2%20Timothy%201%20(Week%201%2C%20Day%205).mp4",
-          "audio_url": "http://127.0.0.1:8080/src/assets/audio/2%20Timothy%201%20(Week%201%2C%20Day%205).mp3",
+          "video_url": "http://localhost:8080/video/w1d5.mp4",
+          "audio_url": "http://localhost:8080/audio/w1d5.mp3",
           "author": {
             "first_name": "Nigel",
             "last_name": "Styles",
@@ -208,8 +208,8 @@
             ],
             "prayer_outro": "Our Father God we thank you so much for the promise of life that is in the Gospel of the Lord Jesus Christ. Please help us today to hold firm to that true gospel. We ask it in Jesus name, amen."
           },
-          "video_url": "http://127.0.0.1:8080/src/assets/video/2%20Timothy%201%20(Week%201%2C%20Day%201).mp4",
-          "audio_url": "http://127.0.0.1:8080/src/assets/audio/2%20Timothy%201%20(Week%201%2C%20Day%201).mp3",
+          "video_url": "http://localhost:8080/video/w1d2.mp4",
+          "audio_url": "http://localhost:8080/audio/w1d2.mp3",
           "author": {
             "first_name": "Nigel",
             "last_name": "Styles",
@@ -250,8 +250,8 @@
             ],
             "prayer_outro": "Our Father God we thank you so much for the promise of life that is in the Gospel of the Lord Jesus Christ. Please help us today to hold firm to that true gospel. We ask it in Jesus name, amen."
           },
-          "video_url": "…",
-          "audio_url": "…",
+          "video_url": "http://localhost:8080/video/w1d1.mp4",
+          "audio_url": "http://localhost:8080/audio/w1d1.mp3",
           "author": {
             "first_name": "Nigel",
             "last_name": "Styles",

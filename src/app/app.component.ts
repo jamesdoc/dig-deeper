@@ -30,7 +30,7 @@ export class AppComponent {
   }
 
   requestStudies() {
-    const ddUrl = 'https://jamesdoc.com/dev/base_data.json';
+    const ddUrl = 'http://127.0.0.1:8080/base_data.json';
     let that = this;
     fetch(ddUrl)
       .then(function(response) {

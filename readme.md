@@ -3,13 +3,14 @@
 ## Setup
 
 - `npm install`
-- `npm run start`
+- Populate public assets folder with audio and video (format `w#d#.mp3`)
+- Serve assets: `npm run assetServer`
+- Get Ionic going: `npm run start`
 
-## Local HTTP Server for video files and json
+## Local HTTP Server for "remote" assets
 
-- Copy video files to the src/asset/video folder
-- run `http-server`
-- Sample URL: <br />http://127.0.0.1:8080/src/assets/video/2%20Timothy%201%20(Week%201%2C%20Day%201).mp4
+- Copy video files to the `/publicAssets` folder
+- run `npm run assetServer`
 
 ## Further reading
 

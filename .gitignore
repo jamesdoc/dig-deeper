@@ -29,8 +29,12 @@ plugins/android.json
 plugins/ios.json
 $RECYCLE.BIN/
 src/assets/video/*
-src/assets/audio/*
+
+publicAssets/audio/*
+publicAssets/video/*
 
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+
+!/**/.gitkeep
