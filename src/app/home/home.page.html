@@ -1,24 +1,33 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      DigDeeper
+      DigDeeper Devotions
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<!-- Study List -->
+<ion-list inset="false" lines="full">
+  <ion-item *ngFor="let week of studies" (click)="weekClick(week)">
+    <ion-icon name="{{weekIcon(week)}}" size="large" slot="start"></ion-icon>
+    <ion-label text-wrap>
+      <ion-text>
+        <h3>
+          <span class="week">{{week.week}}: </span>
+          <span class="subtitle">{{week.title}}</span>
+        </h3>
+      </ion-text>
+      <ion-text color="medium">
+        <p class="passage">{{week.passage}}</p>
+      </ion-text>
+    </ion-label>
 
- 
-  <div *ngFor="let week of studies">
-    <h2>{{ week.week }}</h2>
-    
-    <ion-list>
-      <ion-item *ngFor="let s of week.studies">
-        <ion-label>{{ s.title }}</ion-label>
-      </ion-item>
-    </ion-list>
-  </div>
+    <ion-icon *ngIf="!isDownloaded(week)" name="cloud-download" color="medium" size="small" slot="end"></ion-icon>
+  </ion-item>
+</ion-list>
 
+<ion-content>
+  <!-- Navigation -->
   <ion-tabs>
     <ion-tab-bar slot="bottom">
 

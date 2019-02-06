@@ -4,6 +4,7 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Storage } from '@ionic/storage';
+import { sortBy } from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -37,7 +38,8 @@ export class AppComponent {
         return response.json();
       })
       .then(function(ddJson) {
-        that.storage.set('studies', ddJson.data);
+        const sortedStudies = sortBy(ddJson.data, 'week');
+        that.storage.set('studies', sortedStudies);
       });
   }
 }
