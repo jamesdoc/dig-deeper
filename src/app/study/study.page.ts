@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -23,8 +24,24 @@ export class StudyPage implements OnInit {
     audio_url: string;
     author: { first_name: string; last_name: string; title: string; avatar: string }
   };
+  private mediaType;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    public storage: Storage
+  ) {
+    storage.ready().then(() => {
+      this.getMediaPreference();
+    });
+  }
+
+  getMediaPreference() {
+    this.storage.get('preferType').then((val) => {
+      if (val != null) {
+        this.mediaType = val;
+      }
+    });
+  }
 
   ngOnInit() {
     this.data = {
