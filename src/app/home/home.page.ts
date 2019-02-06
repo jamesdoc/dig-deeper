@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
 
   studyClick(item) {
     this.storage.set('currentStudy', item);
-    this.navCtrl.navigateForward('study');
+    this.navCtrl.navigateForward(`study/${item.id}`);
   }
 
   studyListClass(index) {

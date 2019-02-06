@@ -11,6 +11,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 export class StudyPage implements OnInit {
   private data = null;
   private mediaType;
+  private id: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +20,6 @@ export class StudyPage implements OnInit {
   ) {
     storage.ready().then(() => {
       this.getMediaPreference();
-      this.getCurrentStudy();
     });
   }
 
@@ -39,7 +39,24 @@ export class StudyPage implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+      this.id = this.route.snapshot.paramMap.get('day');
+
+      if (this.id) {
+          // console.log(this.id);
+          this.storage.get('studies').then((data) => {
+              data.forEach((week) => {
+                  week.studies.forEach((study) => {
+                      if (study.id === this.id) {
+                          this.data = study;
+                      }
+                  })
+              })
+          })
+      } else {
+        this.getCurrentStudy();
+      }
+  }
 
   markAsComplete() {
     console.log('TODO: Register study as complete');
