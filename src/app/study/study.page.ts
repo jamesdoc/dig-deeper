@@ -23,14 +23,6 @@ export class StudyPage implements OnInit {
     });
   }
 
-  getCurrentStudy() {
-    this.storage.get('currentStudy').then((val) => {
-      if (val != null) {
-        this.data = val;
-      }
-    });
-  }
-
   getMediaPreference() {
     this.storage.get('preferType').then((val) => {
       if (val != null) {

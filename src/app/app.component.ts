@@ -21,6 +21,7 @@ export class AppComponent {
       this.requestStudies();
     });
     this.initializeApp();
+    this.initializeStorage();
   }
 
   initializeApp() {
@@ -38,9 +39,64 @@ export class AppComponent {
         return response.json();
       })
       .then(function(ddJson) {
-        const sortedStudies = sortBy(ddJson.data, 'week');
-        that.storage.set('studies', sortedStudies);
-        that.storage.set('currentStudy', sortedStudies[0].studies[0]);
+        const sortedWeeks = sortBy(ddJson.data, 'week');
+        that.storage.set('weeks', sortedWeeks);
       });
+  }
+
+  initializeStorage() {
+    this.storage.get('lastCompleted').then((value) => {
+      if (value == undefined || value == null) {
+        this.storage.set('lastCompleted', {
+          'week': 0,
+          'day': -1
+        });
+      }
+    });
+
+    this.storage.get('completedStudies').then((value) => {
+      if (value == undefined || value == null) {
+        this.storage.set('completedStudies', {});
+        // example structure:
+        // {
+        //   0: [0, 1, 2, 3, 4],
+        //   1: [0, 1, 2, 3],
+        //   3: [0, 3, 4]
+        // }
+      }
+    });
+  }
+
+  getCurrentStudy(): {week: number; day: number} {
+    let study = this.storage.get('lastCompleted') as unknown as {week: number; day: number}
+    while (!this.studyIsCompleted(study.week, study.day)) {
+      study.day++;
+      if (study.day >= 5) {
+        // wrap to next week
+        study.week++;
+        study.day = 0;
+      }
+    }
+    return study;
+  }
+
+  studyIsCompleted(week: number, day: number): boolean {
+    let studies = this.storage.get('completedStudies')
+    if (studies.hasOwnProperty(week)) {
+      return false;
+    }
+    return studies[week].indexOf(day) > -1;
+  }
+
+  completeStudy(week: number, day: number) {
+    this.storage.get('completedStudies').then((studies) => {
+      if (studies.hasOwnProperty(week)) {
+        // TODO: check if day is already marked as completed.
+        studies[week].push(day);
+      } else {
+        studies[week] = [day];
+      }
+      this.storage.set('completedStudies', studies);
+    });
   }
 }
