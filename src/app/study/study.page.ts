@@ -21,8 +21,9 @@ export class StudyPage implements OnInit {
   private api: VgAPI;
   private target: any;
   private overlayVisble: boolean;
-  private timerOverlay: NodeJS.Timeout;
-  private timerReadButton: NodeJS.Timeout;
+  private readButtonVisible: boolean;
+  private timerOverlay: any;
+  private timerReadButton: any;
 
   constructor(
     private route: ActivatedRoute,
